@@ -20,6 +20,7 @@ public class CustomDivideByZeroException extends  Exception {
      * @return The numerator of the failed division operation.
      */
     public double getA() {
+
         return a;
     }
 
@@ -29,14 +30,17 @@ public class CustomDivideByZeroException extends  Exception {
      * @return The denominator of the failed division operation.
      */
     public double getB() {
+
         return b;
     }
 
     /**
      * Constructor for the CustomDivideByZeroException.
      */
-    public CustomDivideByZeroException() {
+    public CustomDivideByZeroException(double a, double b) {
         // TODO: Modify this constructor to accept and store the two values attempted to be divided
-        super("Attempted to divide by zero");
+        super("Attempted to divide " + a + " by " + b + " (division by zero)");
+        this.a = a;
+        this.b = b;
     }
 }
